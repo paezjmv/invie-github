@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Precios de tus mejores guitarras!!</title>
+		<meta charset="utf-8"/>
+		<link href='https://fonts.googleapis.com/css?family=Montserrat:400,700|Allerta' rel='stylesheet' type='text/css'>
+		<link rel="stylesheet" href="css/invie.css">
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	</head>
+	<body class="precios">
+		<header id="header" class="header background"> <!-- header -->		
+			<div class="contenedor">		
+				<figure class="logotipo"><!-- logotipo -->
+					<img src="images/invie.png" width="186" height="60" alt="Invie logotipo">
+				</figure>
+				<span class="burguer-button icon-menu" id="burguer-button"></span>
+					<nav class="menu" id="menu"> <!-- menu -->
+						<ul>
+							<li>
+								<a href="index.html">Home</a>
+							</li>
+							<li>
+								<a href="index.html#guitarras">Guitarras</a>
+							</li>	
+							<li>
+								<a href="precios.html">Precios</a>
+							</li>	
+						</ul>
+					</nav>		
+			</div>
+		</header>
+		<section class="tabla">		
+		<div class="contenedor">
+			<table>
+				<thead> <!-- Titulos -->
+					<tr>
+						<th>Modelo</th>
+						<th>Precio</th>
+						<th>Descripción</th>
+						<th>Modelo</th>
+						<th>Precio</th>
+						<th>Descripción</th>
+					</tr>
+				</thead>
+				<tbody> <!-- Contenidos -->
+					<tr>
+						<td>Invie Classic</td>
+						<td>$100000</td>
+						<td>Una guitarra muy pro</td>
+						<td>Invie Classic</td>
+						<td>$100000</td>
+						<td>Una guitarra muy pro</td>
+					</tr>
+					<tr>
+						<td>Invie Classic</td>
+						<td>$100000</td>
+						<td>Una guitarra muy pro</td>
+						<td>Invie Classic</td>
+						<td>$100000</td>
+						<td>Una guitarra muy pro</td>
+					</tr>
+					<tr>
+						<td>Invie Classic</td>
+						<td>$100000</td>
+						<td>Una guitarra muy pro</td>
+						<td>Invie Classic</td>
+						<td>$100000</td>
+						<td>Una guitarra muy pro</td>
+					</tr>
+				</tbody>
+			</table>
+		</div>	
+		</section>
+		<footer class="footer"> <!-- Footer -->
+			<div class="contenedor">
+				<div class="contacto">
+					<img src="images/invie-white.png" alt="logotipo blanco"/>
+					<a href="tel:+573024456678"><strong>Telefono</strong><span>3024456678</span></a>
+					<a href="mailto:contacto@invie.com"><strong>E-mail</strong><span>contacto@invie.com</span></a>
+				</div>
+				<form class="formulario">
+					<div class="col1">
+						<label for="nombre">Nombre</label>
+						<input type="text" required id="nombre" name="nombre">
+						<label for="email">E-mail</label>
+						<input type="email" required id="email" name="email">
+						<div class="sexo">
+							<label for="mujer">
+								<input type="radio" id="mujer" checked name="sexo" value="mujer">Mujer
+							</label>
+							<label for="hombre">
+								<input type="radio" id="hombre" checked name="sexo" value="hombre">Hombre
+							</label>
+						</div>
+						<div class="intereses">	
+							<label for="cotizacion">Cotizacion</label>
+							<input type="checkbox" id="cotizacion" checked name="intereses" value="cotizacion">
+							<label for="reclamos">Reclamos</label>
+							<input type="checkbox" id="reclamos" checked name="intereses" value="reclamos">
+							<label for="comentarios">Comentarios</label>
+							<input type="checkbox" id="comentarios" checked name="intereses" value="comentarios">
+							<label for="otros">Otros</label>
+							<input type="checkbox" id="otros" checked name="intereses" value="otros">
+						</div>	
+					</div>
+						<div class="col2">
+							<label for="comentarios">Comentarios</label>
+							<textarea name="comentarios" id="comentarios" cols="30" rows="7"></textarea>
+							<input type="submit" name="comentarios" value="Enviar" class="button"/>
+						</div>
+				</form>
+			</div>
+		</footer>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/blazy/1.6.2/blazy.min.js">
+			//Script para cargar la libreria de lazy loading
+		</script>
+		<script>
+			var consulta = window.matchMedia('(max-width: 500px)');
+			consulta.addListener(mediaQuery);
+
+			var $burguerButton = document.getElementById('burguer-button');
+			var $menu = document.getElementById('menu');
+			function toggleMenu(){
+				$menu.classList.toggle('active')
+			};
+				
+			function mediaQuery(){
+					if (consulta.matches) {
+					//si se cumple hagamos esto
+					console.log('se cumplio la condicion');
+					$burguerButton.addEventListener('touchstart', toggleMenu);
+				} else {
+					//si no se cumple hagamos esto
+					console.log('no se cumplio la condicion');
+					$burguerButton.removeEventListener('touchstart', toggleMenu);
+				}	
+			}
+
+			mediaQuery()
+
+			// lazy loading - Se carga la fuente del script con anterioridad
+			var blazy = new Blazy({
+				//options
+				selector: 'img'
+			});
+			
+			// $burguerButton.addEventListener('touchstart', toggleMenu);
+
+			// function toggleMenu(){
+			// 	$menu.classList.toggle('active')
+			// };
+		</script>
+	</body>
+</html>	
